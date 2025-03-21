@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+body {
+    background-color: #1f242d;
+    color:snow;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: aliceblue;
+    text-decoration: wavy;
+    font-weight: 600;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+.navbar a{
+    display: inline-block;
+    font-size: 18px;
+    color: white ;
+    text-decoration: underline;
+    font-weight: 500;
+    margin-left: 35px;
+    background-color: transparent;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover,
+ .navbar a.active{
+ color:aqua;
+}
+.home {
+    position: relative;
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 5% 0;
+}
+.home-content{
+    max-width: 800px;
+}
+.home-content h3{
+    font-size: 32px;
+    font-weight: 700;
+    /* animation: slideBottom 1s ease forwards;
+    animation-delay: .7s; */
+}
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 30px;
+    /* animation: slideTop 1s ease forwards;
+    animation-delay: .7s; */
+}
+.home-content h3 span {
+    color:burlywood;
+}
+.home-content h1 {
+    font-size: 50px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+.home-content p{
+    font-size: 18px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+img{
+    background-color: transparent;
+    position: absolute;
+    left: 70%;
+    top: 22%;
+    transform: translate(-50%);
+    width: 50%;
+    max-width: 450px;
+    opacity: 0;
+    animation: zoomIn 1s ease forwards;
+    animation-delay: 2s;
+}
+/* .popup{
+    width: 400px;
+    background: white;
+    border-radius: 6px;
+    position: absolute;
+    top: 0%;
+    left: 55%;
+    transform: translate(-50%,-50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s,top 0.4s;
+}
+.open-popup{
+    visibility: visible;
+    top: 500%;
+    transform: translate(-50%,-50%) scale(1);
+
+}
+.popup a{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 10px 0 10px;
+    color: black;
+}
+.popup button{
+    width: 100px;
+    margin-top: 50px;
+    padding: 10px 0 ;
+    background: #6fd649;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: o 2px 5px rgba(0, 0, 0, 0.2); 
+} */
+@keyframes slideRight{
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft{
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes slideTop{
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom{
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn{
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
